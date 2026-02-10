@@ -1,3 +1,4 @@
+import 'katex/dist/katex.min.css';
 import { Link, useParams } from "react-router";
 import { usePublicQuizSessionByAssignmentId } from "~/libs/api/AssignmentApi";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -5,6 +6,7 @@ import { useQuizPosition } from "~/libs/hooks/useQuizPosition";
 import { useStudentList } from "~/libs/hooks/useStudentList";
 import { UserPen } from "lucide-react";
 import Logo from "~/components/Logo";
+import { LatexRenderer } from "~/components/LatexRenderer";
 
 export function meta() {
   return [
@@ -366,9 +368,13 @@ export default function AssignmentQuizPage() {
                     <div className={`flex flex-col ${currentQuestion.sourceImageURL ? 'lg:w-1/2' : 'w-full max-w-5xl mx-auto'}`}>
                       {/* Question Text */}
                       <div className="mb-6 md:mb-8 lg:mb-10">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center lg:text-left leading-tight">
+                        {/* <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center lg:text-left leading-tight">
                           {currentQuestion.questionText}
-                        </h2>
+                        </h2> */}
+                        <LatexRenderer
+                          content={currentQuestion.questionText}
+                          className='text-2xl font-bold mb-6 text-white'
+                        />
                       </div>
 
                       {/* Answer Options List */}
@@ -379,9 +385,13 @@ export default function AssignmentQuizPage() {
                             <div className="bg-blue-500 text-white font-bold text-xl md:text-2xl lg:text-3xl w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center flex-shrink-0">
                               A
                             </div>
-                            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2">
+                            {/* <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2">
                               {currentQuestion.answerA}
-                            </p>
+                            </p> */}
+                            <LatexRenderer
+                              content={currentQuestion.answerA}
+                              className='text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2'
+                            />
                           </div>
                         </div>
 
@@ -391,9 +401,13 @@ export default function AssignmentQuizPage() {
                             <div className="bg-red-500 text-white font-bold text-xl md:text-2xl lg:text-3xl w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center flex-shrink-0">
                               B
                             </div>
-                            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2">
+                            {/* <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2">
                               {currentQuestion.answerB}
-                            </p>
+                            </p> */}
+                            <LatexRenderer
+                              content={currentQuestion.answerB}
+                              className='text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2'
+                            />
                           </div>
                         </div>
 
@@ -403,9 +417,13 @@ export default function AssignmentQuizPage() {
                             <div className="bg-yellow-500 text-white font-bold text-xl md:text-2xl lg:text-3xl w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center flex-shrink-0">
                               C
                             </div>
-                            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2">
+                            {/* <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2">
                               {currentQuestion.answerC}
-                            </p>
+                            </p> */}
+                            <LatexRenderer
+                              content={currentQuestion.answerC}
+                              className='text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2'
+                            />
                           </div>
                         </div>
 
@@ -415,9 +433,13 @@ export default function AssignmentQuizPage() {
                             <div className="bg-green-500 text-white font-bold text-xl md:text-2xl lg:text-3xl w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center flex-shrink-0">
                               D
                             </div>
-                            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2">
+                            {/* <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2">
                               {currentQuestion.answerD}
-                            </p>
+                            </p> */}
+                            <LatexRenderer
+                              content={currentQuestion.answerD}
+                              className='text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold pt-1 md:pt-2'
+                            />
                           </div>
                         </div>
                       </div>
