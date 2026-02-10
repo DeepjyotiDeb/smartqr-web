@@ -11,10 +11,10 @@ export default function Header() {
           href="/"
           className="group flex items-center justify-center bg-primary rounded-2xl p-3 h-14 w-14 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 hover:rotate-3 relative overflow-hidden"
         >
-          <Logo
+          {/* <Logo
             className="w-10 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg"
             color="white"
-          />
+          /> */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
           <div className="absolute inset-0 bg-primary/50 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
         </a>
